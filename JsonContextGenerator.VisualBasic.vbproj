@@ -5,6 +5,26 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+
+    <!-- NuGet Package Info -->
+    <PackageId>JsonContextGenerator.VisualBasic</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Pac-Dessert1436</Authors>
+    <Company></Company>
+    <Description>A source generator that utilizes `JsonSerializerContext` in Visual Basic .NET,
+      filling a major gap in the toolchain of the language.</Description>
+    <PackageTags>VB.NET;SourceGenerator;JSON;Serialization;Context;Toolchain</PackageTags>
+    <RepositoryUrl>https://github.com/Pac-Dessert1436/JsonContextGenerator.VisualBasic</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Pac-Dessert1436/JsonContextGenerator.VisualBasic</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+
+    <!-- Source Generator Required Settings -->
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <IsRoslynComponent>true</IsRoslynComponent>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +32,17 @@
       PrivateAssets="all" />
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4"
       PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(OutputPath)\$(AssemblyName).dll"
+      Pack="true"
+      PackagePath="analyzers/dotnet/vb"
+      Visible="false" />
   </ItemGroup>
 
 </Project>
