@@ -4,6 +4,8 @@ A source generator that utilizes `JsonSerializerContext` in Visual Basic .NET, *
 
 It automatically generates strongly-typed `JsonSerializerContext` classes for any VB class or struct annotated with `GenerateJsonContextAttribute`, enabling high-performance, source-generated JSON serialization with `System.Text.Json`.
 
+> **v1.0.0 Stable Release**: Initial version with stable working features, despite a few known limitations (see [Current Limitations](#current-limitations)).
+
 ## Requirements
 
 - [.NET 6.0](https://dotnet.microsoft.com/download/dotnet/6.0) or higher
@@ -51,7 +53,16 @@ Or reference the project directly:
 ```vb
 Imports System.Text.Json.Serialization
 
+' Specify a Web-mode context for Product:
 <GenerateJsonContext(JsonContextOption.Web)>
+Public Class Product
+    Public Property Name As String
+    Public Property Quantity As Integer
+    Public Property Price As Decimal
+End Class
+
+' Or, for default JSON context:
+<GenerateJsonContext>
 Public Class Product
     Public Property Name As String
     Public Property Quantity As Integer
@@ -104,7 +115,7 @@ End Class
 ## Current Limitations
 
 - Only **public properties** are included in the JSON contract
-- No support for structs due to their immutability
+- No support for structs due to their immutability (even the boxing-unboxing approach does not work as expected)
 - No support for custom naming policies per property so far
 - Nested generic types are supported, but the context must be generated for the exact closed type
 
