@@ -9,7 +9,7 @@
 
     <!-- NuGet Package Info -->
     <PackageId>JsonContextGenerator.VisualBasic</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>Pac-Dessert1436</Authors>
     <Company></Company>
     <Description>A source generator that utilizes `JsonSerializerContext` in Visual Basic .NET,

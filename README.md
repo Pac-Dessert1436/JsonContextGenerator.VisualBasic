@@ -2,9 +2,9 @@
 
 A source generator that utilizes `JsonSerializerContext` in Visual Basic .NET, **filling a major gap in the toolchain of the language.** _The `JsonSerializerContext` source generation has been a feature officially supported by the .NET SDK only for C#._
 
-It automatically generates strongly-typed `JsonSerializerContext` classes for any VB.NET class annotated with `GenerateJsonContextAttribute`, enabling high-performance, source-generated JSON serialization with `System.Text.Json`.
+It automatically generates strongly-typed `JsonSerializerContext` classes for any **VB.NET class** annotated with `GenerateJsonContextAttribute`, enabling high-performance, source-generated JSON serialization with `System.Text.Json`.
 
-> **v1.0.0 Stable Release**: Initial version with stable working features, despite a few known limitations (see [Current Limitations](#current-limitations)).
+> **v1.0.1 Stable Release**: Initial version with stable working features, despite a few known limitations (see [Current Limitations](#current-limitations)). Struct support is not available and might be planned for a future release.
 
 ## Requirements
 
